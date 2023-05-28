@@ -77,41 +77,40 @@ A 'GS' é uma espada gigantesca com um multiplicador de classe de 4.8
     elif afiação =='Roxo':
         afiação=Roxo
         afi_n='Roxo'
+    
+    dano_final= dano_real*gs_mv*afiação*Khezu_Head*Khezu_defense*Khezu_Enraged*1
 
-dano_final= dano_real*gs_mv*afiação*Khezu_Head*Khezu_defense*Khezu_Enraged*1
+    print('\033[4;32m+=+'*20)
+    #Dano Elemental da Arma
+    dano_elemental=float(input('\n\033[0;31mDANO ELEMENTAL DA ARMA: '))
+    dano_elemental_real= dano_elemental//10.0
+    print('\033[4;32m+=+'*20)
+    #Multiplicador de afiação elemental
+    afiação_elemental=afiação
+    if afiação =='Vermelho':
+        afiação_elemental=Elemental_Vermelho
+    elif afiação =='Laranja':
+        afiação_elemental=Elemental_Laranja
+    elif afiação =='Amarelo':
+        afiação_elemental=Elemental_Amarelo
+    elif afiação =='Verde':
+        afiação_elemental=Elemental_Verde
+    elif afiação =='Azul':
+        afiação_elemental=Elemental_Azul
+    elif afiação =='Branco':
+        afiação_elemental=Elemental_Branco
+    elif afiação =='Roxo':
+        afiação_elemental=Elemental_Roxo
+    #Calculo Elemental
+    dano_elemental_final= dano_elemental_real*afiação_elemental*Khezu_Head*Khezu_defense*Khezu_Enraged
+    #Resultado
+    #Módulo
+    print(f'\n\033[0;33mCOMO EXEMPLO, VAMOS PEGAR SUA ARMA QUE TEM {dano} DE DANO PURO. USANDO DRAW SLASH({gs_mv}) ', end='')
+    print(f'UMA AFIAÇÃO {afi_n} QUE SUPORTA UM MULTIPLICADOR DE {afiação} VEZES.')
+    print(f'USAR CONTRA UM KHEZU G-RANK(0.7 defesa) ENRAIVECIDO(0.9 defesa) , ACERTANDO A CABEÇA (60 pontos de IMPACTO)')
+    if dano_elemental_final == 0:
+        print(f'\n\033[0;33mO DANO BRUTO DE SUA ARMA É DE {dano_final:.2f}')
+    elif dano_elemental_final != 0:
+        print(f'\n\033[0;33mDANO FINAL BRUTO É DE {dano_final:.2f}.')
+        print(f'E O DANO ELEMENTAL É DE {dano_elemental_final:.2f}')
 
-print('\033[4;32m+=+'*20)
-
-#Módulo
-print(f'\n\033[0;33mCOMO EXEMPLO, VAMOS PEGAR SUA ARMA QUE TEM {dano} DE DANO PURO. USANDO DRAW SLASH({gs_mv}) ', end='')
-print(f'UMA AFIAÇÃO {afi_n} QUE SUPORTA UM MULTIPLICADOR DE {afiação} VEZES.')
-print(f'USAR CONTRA UM KHEZU G-RANK(0.7 defesa) ENRAIVECIDO(0.9 defesa) , ACERTANDO A CABEÇA(60 IMPACTO)')
-
-print('\033[4;32m+=+'*20)
-dano_elemental=float(input('\n\033[0;31mDANO ELEMENTAL DA ARMA: '))
-dano_elemental_real= dano_elemental//10
-print('\033[4;32m+=+'*20)
-#Multiplicador de afiação elemental
-afiação_elemental=0
-if afiação =='Vermelho':
-    afiação_elemental=Elemental_Vermelho
-elif afiação =='Laranja':
-    afiação_elemental=Elemental_Laranja
-elif afiação =='Amarelo':
-    afiação_elemental=Elemental_Amarelo
-elif afiação =='Verde':
-    afiação_elemental=Elemental_Verde
-elif afiação =='Azul':
-    afiação_elemental=Elemental_Azul
-elif afiação =='Branco':
-    afiação_elemental=Elemental_Branco
-elif afiação =='Roxo':
-    afiação_elemental=Elemental_Roxo
-#Calculo Elemental
-dano_elemental_final= dano_elemental_real*afiação_elemental*Khezu_Head*Khezu_defense*Khezu_Enraged
-#Resultado
-if dano_elemental == 0:
-    print(f'\n\033[0;33mO DANO BRUTO DE SUA ARMA É DE {dano_final:.2f}')
-else:
-    print(f'\n\033[0;33mDANO FINAL BRUTO É DE {dano_final:.2f}.')
-    print(f'E O DANO ELEMENTAL É DE {dano_elemental_final}')
