@@ -79,6 +79,9 @@ while True or dano_da_arma <= 0:
         break
 print('\033[4;32m+=+'*20)
 
+
+
+dano_real=1439
                         #Escolha de nível de afiação da arma
 afiação=''
 while True or afiação!=Vermelho and afiação!=Amarelo and afiação!=Verde and afiação!=Azul and afiação!=Branco and afiação!=Roxo:
@@ -86,24 +89,31 @@ while True or afiação!=Vermelho and afiação!=Amarelo and afiação!=Verde an
         afiação=str(input('''\n\033[0;37mNÍVEL DE AFIAÇÃO DA ARMA\n
         \033[31m[Vermelho] \033[33m[Amarelo] \033[32m[Verde] \033[36m[Azul] \033[37m[Branco] \033[35m[Roxo]\n
         \033[37mDIGITE A COR CORRESPONDENTE: ''')).capitalize()
+
         if afiação =='Vermelho':
                     afiação=Vermelho
                     afi_n='Vermelho'
+                    
         if afiação =='Amarelo':
                     afiação=Amarelo
                     afi_n='Amarelo'
+                    
         if afiação =='Verde':
                     afiação=Verde
-                    afi_n='Verde'                    
+                    afi_n='Verde'
+                    
         if afiação =='Azul':
                     afiação=Azul
                     afi_n='Azul'
+                    
         if afiação =='Branco':
                     afiação =Branco
                     afi_n='Branco'
+                    
         if afiação =='Roxo':
                     afiação=Roxo
                     afi_n='Roxo'
+
         dano_final= dano_real*gs_mv*afiação*Khezu_Head*Khezu_defense*Khezu_Enraged*1
         print('\033[4;32m+=+'*20)
         break
@@ -112,6 +122,7 @@ while True or afiação!=Vermelho and afiação!=Amarelo and afiação!=Verde an
            print('ERRO DE DIGITAÇÃO, OU VALOR INVÁLIDO. TENTE NOVAMENTE!')
            print('\033[31m+=+'*20)
     continue
+
 
                         #Dano Elemental da Arma
 while True:
